@@ -1,241 +1,37 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Ruby on Rails: Welcome aboard</title>
-    <style type="text/css" media="screen">
-      body {
-        margin: 0;
-        margin-bottom: 25px;
-        padding: 0;
-        background-color: #f0f0f0;
-        font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
-        font-size: 13px;
-        color: #333;
-      }
-
-      h1 {
-        font-size: 28px;
-        color: #000;
-      }
-
-      a  {color: #03c}
-      a:hover {
-        background-color: #03c;
-        color: white;
-        text-decoration: none;
-      }
-
-
-      #page {
-        background-color: #f0f0f0;
-        width: 750px;
-        margin: 0;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      #content {
-        float: left;
-        background-color: white;
-        border: 3px solid #aaa;
-        border-top: none;
-        padding: 25px;
-        width: 500px;
-      }
-
-      #sidebar {
-        float: right;
-        width: 175px;
-      }
-
-      #footer {
-        clear: both;
-      }
-
-      #header, #about, #getting-started {
-        padding-left: 75px;
-        padding-right: 30px;
-      }
-
-
-      #header {
-        background-image: url("assets/rails.png");
-        background-repeat: no-repeat;
-        background-position: top left;
-        height: 64px;
-      }
-      #header h1, #header h2 {margin: 0}
-      #header h2 {
-        color: #888;
-        font-weight: normal;
-        font-size: 16px;
-      }
-
-
-      #about h3 {
-        margin: 0;
-        margin-bottom: 10px;
-        font-size: 14px;
-      }
-
-      #about-content {
-        background-color: #ffd;
-        border: 1px solid #fc0;
-        margin-left: -55px;
-        margin-right: -10px;
-      }
-      #about-content table {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        font-size: 11px;
-        border-collapse: collapse;
-      }
-      #about-content td {
-        padding: 10px;
-        padding-top: 3px;
-        padding-bottom: 3px;
-      }
-      #about-content td.name  {color: #555}
-      #about-content td.value {color: #000}
-
-      #about-content ul {
-        padding: 0;
-        list-style-type: none;
-      }
-
-      #about-content.failure {
-        background-color: #fcc;
-        border: 1px solid #f00;
-      }
-      #about-content.failure p {
-        margin: 0;
-        padding: 10px;
-      }
-
-
-      #getting-started {
-        border-top: 1px solid #ccc;
-        margin-top: 25px;
-        padding-top: 15px;
-      }
-      #getting-started h1 {
-        margin: 0;
-        font-size: 20px;
-      }
-      #getting-started h2 {
-        margin: 0;
-        font-size: 14px;
-        font-weight: normal;
-        color: #333;
-        margin-bottom: 25px;
-      }
-      #getting-started ol {
-        margin-left: 0;
-        padding-left: 0;
-      }
-      #getting-started li {
-        font-size: 18px;
-        color: #888;
-        margin-bottom: 25px;
-      }
-      #getting-started li h2 {
-        margin: 0;
-        font-weight: normal;
-        font-size: 18px;
-        color: #333;
-      }
-      #getting-started li p {
-        color: #555;
-        font-size: 13px;
-      }
-
-
-      #sidebar ul {
-        margin-left: 0;
-        padding-left: 0;
-      }
-      #sidebar ul h3 {
-        margin-top: 25px;
-        font-size: 16px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #ccc;
-      }
-      #sidebar li {
-        list-style-type: none;
-      }
-      #sidebar ul.links li {
-        margin-bottom: 5px;
-      }
-
-      .filename {
-        font-style: italic;
-      }
-    </style>
-    <script type="text/javascript">
-      function about() {
-        info = document.getElementById('about-content');
-        if (window.XMLHttpRequest)
-          { xhr = new XMLHttpRequest(); }
-        else
-          { xhr = new ActiveXObject("Microsoft.XMLHTTP"); }
-        xhr.open("GET","rails/info/properties",false);
-        xhr.send("");
-        info.innerHTML = xhr.responseText;
-        info.style.display = 'block'
-      }
-    </script>
-  </head>
-  <body>
-    <div id="page">
-      <div id="sidebar">
-        <ul id="sidebar-items">
-          <li>
-            <h3>Browse the documentation</h3>
-            <ul class="links">
-              <li><a href="http://guides.rubyonrails.org/">Rails Guides</a></li>
-              <li><a href="http://api.rubyonrails.org/">Rails API</a></li>
-              <li><a href="http://www.ruby-doc.org/core/">Ruby core</a></li>
-              <li><a href="http://www.ruby-doc.org/stdlib/">Ruby standard library</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-
-      <div id="content">
-        <div id="header">
-          <h1>Welcome aboard</h1>
-          <h2>You&rsquo;re riding Ruby on Rails!</h2>
-        </div>
-
-        <div id="about">
-          <h3><a href="rails/info/properties" onclick="about(); return false">About your application&rsquo;s environment</a></h3>
-          <div id="about-content" style="display: none"></div>
-        </div>
-
-        <div id="getting-started">
-          <h1>Getting started</h1>
-          <h2>Here&rsquo;s how to get rolling:</h2>
-
-          <ol>
-            <li>
-              <h2>Use <code>rails generate</code> to create your models and controllers</h2>
-              <p>To see all available options, run it without parameters.</p>
-            </li>
-
-            <li>
-              <h2>Set up a default route and remove <span class="filename">public/index.html</span></h2>
-              <p>Routes are set up in <span class="filename">config/routes.rb</span>.</p>
-            </li>
-
-            <li>
-              <h2>Create your database</h2>
-              <p>Run <code>rake db:create</code> to create your database. If you're not using SQLite (the default), edit <span class="filename">config/database.yml</span> with your username and password.</p>
-            </li>
-          </ol>
-        </div>
-      </div>
-
-      <div id="footer">&nbsp;</div>
-    </div>
-  </body>
-</html>
+<div align="center"><font size="7"></font>&nbsp; Om namah sivayah</div>
+<h1>Sanskrit_Alphabet(AksharaMala)</h1>
+<h1>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span class="Apple-tab-span" style="white-space: pre">						<a title="" href="upan.html">Upanishd_Ganga</a></span></h1>
+<div><span class="Apple-tab-span" style="white-space: pre"></span></div>
+<h2><font face="wp_bogus_font">&nbsp; &nbsp;<a title="" href="Sanskrit_Akshara_Mala.pdf">Sanskrit_Akshara_Mala(Telugu)</a></font></h2>
+<h2>&nbsp; &nbsp; &nbsp;<a title="" href="sanskrit-alphabet_1.gif">sanskrit-alphabet</a></h2>
+<h2><br />
+&nbsp; &nbsp; &nbsp;&nbsp;<a title="" href="Sanskrit_Alphabets_Practice_1.pdf">Sanskrit_Alphabets_Practice_1.pdf</a></h2>
+<h2>&nbsp; &nbsp; &nbsp;&nbsp;<a title="" href="Sanskrit_Alphabets_Practice_2.pdf">Sanskrit_Alphabets_Practice_2.pdf</a></h2>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<h1>Lesson1</h1>
+<iframe width="420" height="315" src="http://www.youtube.com/embed/k1kiiX5e9_o" frameborder="0" allowfullscreen=""></iframe>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<h2>&nbsp;<a title="" href="Lesson1_Practice.pdf">Lesson1_Practice_Sheet</a></h2>
+<h1>Lesson2</h1>
+<iframe width="420" height="315" src="http://www.youtube.com/embed/KZ_G6rCIBU8" frameborder="0" allowfullscreen=""></iframe>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<div>&nbsp;</div>
+<h2>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp;<a title="" href="lesson2.pdf">Lesson2_Reference_Notes</a></h2>
+<h2>&nbsp; &nbsp; &nbsp; &nbsp;<a title="" href="Lesson2_Practice.pdf">Lesson2_Practice</a></h2>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<h1>Lesson3</h1>
+<iframe width="420" height="315" src="http://www.youtube.com/embed/G42MvJHfhRQ" frameborder="0" allowfullscreen=""></iframe>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<h2>&nbsp; &nbsp; &nbsp; &nbsp;<a title="" href="Lesson3_Practice.pdf">Lesson3_Practice.pdf</a></h2>
+<h2>&nbsp; &nbsp; &nbsp; &nbsp;<a title="" href="lesson3_Practice_2.pdf">Lesson3_Practice_2.pdf</a></h2>
+<div>&nbsp;</div>
+<h1>Lesson4</h1>
+<iframe width="420" height="315" src="http://www.youtube.com/embed/t8NfmUUddug" frameborder="0" allowfullscreen=""></iframe>
+<h2>&nbsp; &nbsp; &nbsp; &nbsp;<a title="" href="Lesson4_Practice.pdf">Lesson4_Practice</a></h2>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
